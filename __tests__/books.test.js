@@ -8,6 +8,11 @@ describe('book routes', () => {
     return setup(pool);
   });
 
+  it('/:id should return details about a book', async () => {
+    const res = await request(app).get('/books/1');
+    expect(res.status).toEqual(200);
+  });
+
   it('should return a list of books', async () => {
     const res = await request(app).get('/books');
     expect(res.status).toEqual(200);
