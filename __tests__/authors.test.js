@@ -11,6 +11,7 @@ describe('author routes', () => {
   it('should return a list of authors', async () => {
     const res = await request(app).get('/authors');
     expect(res.status).toEqual(200);
+    expect(res.body.length).toEqual(3);
   });
     
   afterAll(() => {
