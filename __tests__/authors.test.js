@@ -1,6 +1,6 @@
 const setup = require('../data/setup');
 const app = require('../lib/app');
-const { request } = require('../lib/app');
+const request = require('supertest');
 const pool = require('../lib/utils/pool');
 
 describe('author routes', () => {
