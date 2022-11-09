@@ -10,6 +10,7 @@ describe('book routes', () => {
 
   it('/:id should return details about a book', async () => {
     const res = await request(app).get('/books/1');
+    console.log('book detail', res.body);
     expect(res.status).toEqual(200);
   });
 
