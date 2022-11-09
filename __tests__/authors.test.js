@@ -11,8 +11,9 @@ describe('author routes', () => {
   it('should return details about an author', async () => {
     const res = await request(app).get('/authors/1');
     const author = {
+      id: '1',
       name: 'J.R. Tolkien',
-      dob: '1909',
+      dob: 1909,
       pob: 'Hogwarts',
       books: [{
         id: 3,
