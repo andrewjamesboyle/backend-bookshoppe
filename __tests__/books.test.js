@@ -10,8 +10,14 @@ describe('book routes', () => {
 
   it('/:id should return details about a book', async () => {
     const res = await request(app).get('/books/1');
-    console.log('book detail', res.body);
-    expect(res.status).toEqual(200);
+    const bookDetail = {
+      id: '1',
+      title: 'I Will Teach You To Be Rich',
+      released: 2011,
+      authors: [{ id: 2, dob: 1989, pob: 'England', name: 'Harry Potter' }] 
+    };
+
+    expect(res.body).toEqual(bookDetail);
   });
 
   it('should return a list of books', async () => {
